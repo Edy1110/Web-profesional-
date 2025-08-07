@@ -1,0 +1,250 @@
+/* --- Globales y Estilos Base --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header y Navegación (Menú) --- */
+header {
+    background-color: #af1515;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3cm;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    background-color: #7b1010;
+    border-radius: 5px;
+}
+
+/* --- Estilos Generales de Secciones --- */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #212529;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #af1515;
+    border-radius: 2px;
+}
+
+/* --- Sección de Experiencia (Timeline) --- */
+.experiencia {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #ddd;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.timeline-content {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    width: 45%;
+    text-align: justify;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: right;
+}
+
+.timeline-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.timeline-image img {
+    max-width: 100%;
+    max-height: 150px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .skills-container {
+    justify-content: flex-end;
+}
+
+.timeline-content .date {
+    font-weight: bold;
+    color: #af1515;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Estilos para los botones de habilidades/enlaces */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-skill {
+    display: inline-block;
+    background-color: #af1515;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.button-skill:hover {
+    background-color: #f01800;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #a01414;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    /* Navbar en móvil */
+    .menu {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 15px;
+    }
+
+    .menu a {
+        padding: 0.7rem 1rem;
+        font-size: 1.05rem;
+    }
+
+    /* Título de sección en móvil */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Timeline en móvil (una sola columna) */
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .timeline-content,
+    .timeline-image {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+    }
+    
+    .timeline-item:nth-child(even) .skills-container {
+        justify-content: flex-start;
+    }
+}

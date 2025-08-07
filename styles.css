@@ -1,0 +1,186 @@
+/* --- Estilos Generales y Reseteo --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+/* --- Header y Navegación (Navbar) --- */
+header {
+    background-color: #af1515;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3cm;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    background-color: #7b1010;
+    border-radius: 5px;
+}
+
+/* --- Contenido Principal --- */
+.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #0f1112;
+}
+
+/* --- Sección de Cabecera con Imagen --- */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.text-left {
+    flex: 1;
+    min-width: 400px;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.text-left h1, .text-left h2 {
+    text-align: center;
+}
+
+.image-right {
+    flex-shrink: 0;
+    max-width: 40%;
+    text-align: right;
+}
+
+.image-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Sección de Imágenes en Línea --- */
+.inline-images-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1cm;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.inline-images-section img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Pie de Página (Footer) y Enlaces Sociales --- */
+footer {
+    background-color: #a50808;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #212529;
+    transform: translateY(-5px);
+}
+
+/* --- Media Queries (Ajustes para Teléfonos Móviles y Tabletas) --- */
+@media (max-width: 768px) {
+    /* Ajustes generales para pantallas pequeñas */
+    body {
+        font-size: 1rem; /* Reduce el tamaño de fuente base */
+        line-height: 1.5;
+    }
+
+    .content {
+        margin: 1rem auto;
+        padding: 0 15px;
+    }
+    
+    /* Apila los elementos en la sección de cabecera */
+    .header-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-left {
+        min-width: unset;
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .image-right {
+        max-width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    /* Apila el menú de navegación */
+    .menu {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 15px;
+    }
+
+    .menu a {
+        padding: 0.7rem 1rem;
+        font-size: 1.05rem;
+    }
+
+    /* Ajusta el tamaño de las imágenes en línea */
+    .inline-images-section img {
+        max-width: 150px;
+    }
+}
